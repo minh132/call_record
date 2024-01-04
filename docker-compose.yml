@@ -13,11 +13,11 @@ services:
     deploy:
         resources:
             limits:
-              cpus: "0.05"
-              memory: 512M
+              cpus: "2"
+              memory: 2048M
             reservations:
-              cpus: "0.05"
-              memory: 512M
+              cpus: "2"
+              memory: 2048M
   call_recorder:
     depends_on:
       - mysql
@@ -33,11 +33,11 @@ services:
     deploy:
         resources:
             limits:
-              cpus: "0.05"
-              memory: 512M
+              cpus: "2"
+              memory: 2048M
             reservations:
-              cpus: "0.05"
-              memory: 512M
+              cpus: "2"
+              memory: 2048M
 volumes:
   db_data:
   mysqldata:
