@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mariadb:latest
+    environment:
+        MYSQL_ROOT_PASSWORD: 'admin'
+        MYSQL_USER: 'admin'
+        MYSQL_PASSWORD: 'admin'
+        MYSQL_DATABASE: 'billing'
+    volumes:
+        - mysqldata:/var/lib/mysql
+    deploy:
+        resources:
+            limits:
+              cpus: "0.05"
+              memory: 512M
+            reservations:
+              cpus: "0.05"
+              memory: 512M
+  call_recorder:
+    depends_on:
+      - mysql
+    build: .
+    restart: "always"
+    ports:
+      - 8888:8888
+    environment:
+      MYSQL_HOST: "mysql"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "admin"
+      MYSQL_DATABASE: "billing"
+    deploy:
+        resources:
+            limits:
+              cpus: "0.05"
+              memory: 512M
+            reservations:
+              cpus: "0.05"
+              memory: 512M
+volumes:
+  db_data:
+  mysqldata:

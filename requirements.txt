@@ -1,0 +1,6 @@
+fastapi
+mysql_connector_repackaged
+pydantic
+uvicorn
+mysql-connector-python
+python-dotenv
