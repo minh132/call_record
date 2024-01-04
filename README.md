@@ -16,7 +16,7 @@ Run docker compose, execute command below and wait a few minutes to run testcase
 docker compose up
 ```
 ## 4. TestAPI
-Go to ```bash http://0.0.0.0:8888/docs ``` to test API
+Go to ``` http://0.0.0.0:8888/docs ``` to test API
 
 # Gunicorn with Uvicorn Workers
 Gunicorn supports working as a process manager and allowing users to tell it which specific worker process class to use. Then Gunicorn would start one or more worker processes using that class.
