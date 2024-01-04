@@ -23,16 +23,15 @@ class CallRecord(BaseModel):
     call_duration: int
 
 
-@app.post('/mobile/call')
+@app.post('/mobile/{call_record.username}/call')
 async def record_call(call_record: CallRecord):
     try:
-        block_count = (call_record.call_duration + 29) // 30
         cursor.execute("""
             INSERT INTO calls (username, call_duration)
             VALUES (%s, %s)
         """, (call_record.username, call_record.call_duration))
         db.commit()
-        return {'message': 'Call recorded successfully', 'block_count': block_count}
+        return {'message': 'Call recorded successfully'}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 

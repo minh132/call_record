@@ -13,7 +13,6 @@ class TestBillingApp(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         data = response.json()
         self.assertEqual(data['message'], 'Call recorded successfully')
-        self.assertEqual(data['block_count'], 2)  
 
     def test_get_billing_info(self):
         response = self.client.get('/mobile/testuser/billing/')
