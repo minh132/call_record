@@ -7,7 +7,7 @@ Run the following command to build docker compose:
 docker compose build
 ```
 ## 2. Run dockercompose
-Run docker compose, execute commnd below:
+Run docker compose, execute command below:
 ```bash
 docker compose up
 ```
