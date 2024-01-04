@@ -20,7 +20,7 @@ Go to ``` http://0.0.0.0:8888/docs ``` to test API
 
 # Gunicorn with Uvicorn Workers
 Gunicorn supports working as a process manager and allowing users to tell it which specific worker process class to use. Then Gunicorn would start one or more worker processes using that class.
-I use [JMeter](https://jmeter.apache.org/) to test success rate when send many request with resource limit in docker-compose. Result when use uvicorn and gunicorn with same config in JMeter, send 2500 request in 2 seconds :
+I use [JMeter](https://jmeter.apache.org/) to test success rate when send many request with resource limit in docker-compose(2 core cpu and 2048m memory) . Result when use uvicorn and gunicorn with same config in JMeter, send 2500 request in 2 seconds and set timeout 2s:
 
 Gunicorn
 
